@@ -319,3 +319,9 @@ Open menu `Editor/Editor Settings/` then navigate to `General/External/`:
 * Add `--servername godothost --remote-send "<C-\><C-N>:n {file}<CR>:call cursor({line},{col})<CR>"` to `Exec Flags`
 
 now when you click on a script in godot it will open it in a new buffer in Neovim.
+
+
+# add this to init.vim
+inoremap complete_info().selected != -1 ?
+\ &filetype == "gdscript" ? (coc#expandable() ? "<C-y>" : "<C-y>a") : "<C-y>"
+\ : "<C-g>u<CR>"
